@@ -1,0 +1,42 @@
+.navigationContainer{
+   .logoArea{
+    width:140px;
+    img{
+        max-width:100%;
+        max-height:100%;
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        object-fit:cover
+    }
+   }
+}
+
+.sliderImage{
+    max-width:100%;
+    height:400px;
+    object-fit:cover;
+    border-radius: 3px;
+}
+
+.searchInput{
+    width: 300px;
+}
+.eventDetail{
+    width:100%;
+    height:400px;
+    display:flex;
+    justify-content: center;
+    img{
+        max-width:100%;
+        max-height:100%;
+        object-fit:cover
+    }
+}
+
+.redChairs{
+    width: 60px;
+}
+.seatNumber{
+    position: absolute;
+}
