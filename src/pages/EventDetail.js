@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from 'react'
-import { useLocation, useNavigate } from "react-router-dom"
+import React, { useState } from 'react'
+import { useLocation, Link } from "react-router-dom"
 import { Container, Row, Col } from "react-bootstrap"
 import Events from '../events/events.json'
 import BuyTicketModal from "../components/BuyTicketModal"
-import Button from "react-bootstrap/Button"
 import EventLocation from "../components/EventLocation"
 
 export default function EventDetail() {
     const fullHref = window.location.href
     const location = useLocation()
     const locationHolder = location.pathname
-    const findEventWithParam = Events.find(event => event.name.replaceAll(" ", "").toLowerCase() === locationHolder.replace("/etkinlik/", ""))
+    const findEventWithParam = Events.find(event => 
+        event.name.toLowerCase().replaceAll(" ","").replaceAll("ş","s").replaceAll("ç","c").replaceAll("ü","u").replaceAll("ö","o").replaceAll("ğ","g").replaceAll("ı","i")
+         === locationHolder.replace("/etkinlik/", ""))
     const [selectedSeat, setSelectedSeat] = useState()
-    
     const [modalShow, setModalShow] = useState(false);
-
+    
     const handleModalClose = () =>   setModalShow(false);
     
 
@@ -24,10 +24,10 @@ export default function EventDetail() {
             setSelectedSeat(i);
             !boughtSeats.includes(i) && setModalShow(true);
         }
-    
+
 
     let rows = [];
-    const test = () => {
+    const seatCreator = () => {
         for (let i = 1; i <= 50; i++) {
             rows.push({
                 seat:
@@ -63,12 +63,18 @@ export default function EventDetail() {
            </div>
             {
                 [findEventWithParam].map(event => (
-                    <>
-                        <h1 className="text-center mb-3">{event.name}</h1>
+                    
+                   <div className="text-center">
+                        <h1 className="mb-3">{event.name}</h1>
                         <div className="eventDetail">
                             <img src={event.image} alt={event.name} />
                         </div>
-                    </>
+                        <p className='mx-5 mt-3'>{event.desc}</p>
+                        <h5> Tarih : {new Date((Number(event.date))).toLocaleDateString()}</h5>
+                        <Link to={`/lokasyon/${event.location.toLowerCase().replaceAll(" ","").replaceAll("ş","s").replaceAll("ç","c").replaceAll("ü","u").replaceAll("ö","o").replaceAll("ğ","g").replaceAll("ı","i").replaceAll(" ","")}`}><h5> Konum : {event.location}</h5></Link>
+                        <h5> Şehir : {event.city}</h5>
+                        <h5> Ortalama Bilet Fiyatı : {(event.frontSeatsPrice+event.backSeatsPrice)/2} Türk Lirası</h5>
+                    </div>
                 ))
             }
             <Container className="mt-3">
@@ -80,7 +86,7 @@ export default function EventDetail() {
                     />
                 </div>
                 <div className="mt-3">
-                    {test()}
+                    {seatCreator()}
                 </div>
                 <>
                     <BuyTicketModal
@@ -92,7 +98,7 @@ export default function EventDetail() {
                         city={findEventWithParam.city}
                         location={findEventWithParam.location}
                         price={priceSet}
-                        isBuyed={test}
+                        isBuyed={seatCreator}
                         setBoughtSeats={setBoughtSeats}
                         onHide={() => setModalShow(false)}
                         handleModalClose={handleModalClose}
