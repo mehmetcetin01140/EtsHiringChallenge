@@ -1,6 +1,7 @@
 import LayoutComponent from "./components/LayoutComponent";
-import HomePage from "./components/HomePage"
-import EventDetail from "./components/EventDetail";
+import HomePage from "./pages/Home"
+import EventDetail from "./pages/EventDetail";
+import CategoryView from "./pages/CategoryView"
 import {
   BrowserRouter,
   Routes,
@@ -16,6 +17,7 @@ function App() {
         <Route path="/*" element={<LayoutComponent/>}>
         <Route path="" element={<HomePage/>}/>
         <Route path="etkinlik/:name" element={<EventDetail/>}/>
+        <Route path="kategori/:name" element={<CategoryView/>}/>
         </Route>
     </Routes>
  </BrowserRouter>

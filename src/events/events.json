@@ -8,7 +8,7 @@
         "image" : "https://www.kadinisci.org/wp-content/uploads/2021/07/S32-Herkes-Kocama-Benziyor1.png",
         "frontSeatsPrice" : 150,
         "backSeatsPrice" : 100,
-        "date" : "26.06.2022",
+        "date" : "1656259740000",
         "lat" : 41.14476514379183,
         "lng" : 28.898611836818276
     },
@@ -20,7 +20,8 @@
         "location" : "DOTOrmanda",
         "image" : "https://i4.hurimg.com/i/hurriyet/75/1110x740/5b8e6d967152d827603dd434.jpg",
         "frontSeatsPrice" : 150,
-        "backSeatsPrice" : 100
+        "backSeatsPrice" : 100,
+        "date": "1656346140000"
     },
     {
         "id" : 3,
@@ -30,7 +31,8 @@
         "location" : "DOTOrmanda",
         "image" : "https://img.chip.com.tr/rcman/Cw912h570q95gm/images/content/2020/12/22/2020122204545191085.jpg",
         "frontSeatsPrice" : 150,
-        "backSeatsPrice" : 100
+        "backSeatsPrice" : 100,
+        "date": "1656432540000"
     },
     {
         "id" : 4,
@@ -40,6 +42,7 @@
         "location" : "DOTOrmanda",
         "image" : "https://img.chip.com.tr/rcman/Cw912h570q95gm/images/content/2020/12/22/2020122204545191085.jpg",
         "frontSeatsPrice" : 150,
-        "backSeatsPrice" : 100
+        "backSeatsPrice" : 100,
+        "date": "1656518940000"
     }
 ]

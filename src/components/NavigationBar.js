@@ -6,10 +6,10 @@ export default function NavigationBar() {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const categories = ["deneme","deneme2"]
+    const categories = ["Tiyatro","Sergi","Konser"]
   return (
     <>
-    {['lg', ].map((expand) => (
+    {['lg'].map((expand) => (
       <Navbar key={expand} bg="light" expand={expand} className="navigationContainer">
         <Container fluid>
           <Navbar.Brand className="logoArea"><Link to="/"><img src={Logo} alt="ets logo" /></Link></Navbar.Brand>
@@ -33,11 +33,10 @@ export default function NavigationBar() {
                 <NavDropdown
                   title="Kategoriler"
                   id={`offcanvasNavbarDropdown-expand-${expand}`}
-                  className='dropdownLinks'
                 >
                   {
                       categories.map((category,index)=>(
-                       <NavDropdown.Item as={NavLink} to={"test"} key={index}>{category}</NavDropdown.Item>
+                       <NavDropdown.Item as={NavLink} to={`/kategori/${category.toLowerCase()}`} key={index}>{category}</NavDropdown.Item>
                              )
                       )
                   }

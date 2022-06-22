@@ -20,8 +20,22 @@
 }
 
 .searchInput{
+    background-color: #F4F4F4;
+	border-radius: 8px;
+	padding: 0.5rem 0.7rem;
+	border: 1px solid #fff;
+	margin-bottom: 1rem;
+	margin-top: 0.3rem;
     width: 300px;
 }
+
+.searchInput:focus{
+    border: 1px solid #4B9CE2;
+	outline: none;
+	background-color: #F0F8FF;
+	color: #3E3E3E;
+}
+
 .eventDetail{
     width:100%;
     height:400px;
@@ -37,6 +51,36 @@
 .redChairs{
     width: 60px;
 }
+
+.bought-seat{
+    opacity: 0.5;
+}
+
+.redChairs:hover{
+    cursor: pointer;
+}
+
 .seatNumber{
     position: absolute;
 }
+.socialMedia{
+            display:flex ;
+            align-items: center !important;
+            justify-content: center;
+            a{
+                height: 29px;
+                margin-left: 15px;
+            }
+            .twitterButton{
+             color:#1da1f2 !important;
+             font-size: 29px !important;
+            }
+            .whatsappButton{
+             color:#4ae159!important;
+             font-size: 29px !important;
+            }
+            .facebookButton{
+                color:#1877f2 !important;
+                font-size: 29px !important;
+            }
+         }

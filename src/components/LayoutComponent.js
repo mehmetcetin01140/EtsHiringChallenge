@@ -1,7 +1,6 @@
 
 import React from 'react'
 import NavigationBar from './NavigationBar';
-import HomePage from "./HomePage"
 import {Outlet} from "react-router-dom";
 export default function LayoutComponent() {
   return (
