@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { useLocation, Link } from "react-router-dom"
 import { Container, Row, Col } from "react-bootstrap"
 import Events from '../events/events.json'
-import BuyTicketModal from "../components/BuyTicketModal"
-import EventLocation from "../components/EventLocation"
+import BuyTicketModal from "../components/buyTicketModal"
+import EventLocation from "../components/eventLocation"
 
 export default function EventDetail() {
     const fullHref = window.location.href
